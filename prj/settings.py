@@ -1,6 +1,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 SECRET_KEY = '-ptmu*fnj&g=b#g_=-5p13=rx(9$(m89#uxe)f_icqddbo5g8s'
 
 DEBUG = True
