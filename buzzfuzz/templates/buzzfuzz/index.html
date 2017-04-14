@@ -1,0 +1,11 @@
+{% extends 'buzzfuzz/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h3>All Users</h3>
+  <ul class="collection">
+  {% for profile in profile_list %}
+      <li><a class="collection-item" href="#">{{profile.user}}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
