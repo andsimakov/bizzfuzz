@@ -1,0 +1,19 @@
+{% extends 'buzzfuzz/base.html' %}
+{% block title %}Profile details{% endblock %}
+
+{% block content %}
+  <h3 class="title">Profile of {{profile.user}}</h3>
+  <a class="btn-flat" href="{% url 'buzzfuzz:index' %}">⇠ Back to list</a>
+  <div class="card">
+    <div class="card-content">
+      <p class="center-align"><i>Birthdate: {{profile.birthday}}</i></p>
+      <p class="center-align"><i>Random: {{profile.random}}</i></p>
+    </div>
+    <div class="card-action">
+      <form class="right" method="POST" action="{% url 'buzzfuzz:delete' profile.id %}">{% csrf_token %}
+        <input class="btn red" type="submit" value="Delete">
+      </form>
+      <a class="btn" href="{% url 'buzzfuzz:edit' profile.id %}">Edit profile</a>
+    </div>
+  </div>
+{% endblock %}

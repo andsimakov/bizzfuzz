@@ -2,10 +2,11 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h3>All Users</h3>
-  <ul class="collection">
+  <h3 class="title">All profiles</h3>
+  <div class="collection">
   {% for profile in profile_list %}
-      <li><a class="collection-item" href="#">{{profile.user}}</a></li>
+    <a class="collection-item" href="{% url 'buzzfuzz:detail' profile.id %}">{{profile.user}}</a>
   {% endfor %}
-  </ul>
+  </div>
+  <a class="btn" href="{% url 'buzzfuzz:create' %}">Create profile</a>
 {% endblock %}

@@ -1,9 +1,6 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.views.generic import View
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, RedirectView
+
 from .models import Profile
 from .forms import ProfileForm
 
@@ -38,6 +35,6 @@ class BuzzDeleteView(DeleteView):
 
 
 class BuzzUpdateView(UpdateView):
-    template_name = "buzzfuzz/update.html"
+    template_name = "buzzfuzz/edit.html"
     model = Profile
     form_class = ProfileForm

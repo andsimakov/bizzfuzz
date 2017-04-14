@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', BuzzDetailView.as_view(), name='detail'),
     url(r'^create/$', BuzzCreateView.as_view(), name='create'),
     url(r'^delete/(?P<pk>\d+)/$', BuzzDeleteView.as_view(), name='delete'),
-    url(r'^update/(?P<pk>\d+)/$', BuzzUpdateView.as_view(), name='update'),
+    url(r'^edit/(?P<pk>\d+)/$', BuzzUpdateView.as_view(), name='edit'),
 ]

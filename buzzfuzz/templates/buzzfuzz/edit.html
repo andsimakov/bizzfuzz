@@ -1,0 +1,16 @@
+{% extends 'buzzfuzz/base.html' %}
+{% block title %}Edit profile{% endblock %}
+
+{% block content %}
+  <h3 class="title">Update {{profile.user}} profile</h3>
+  <form class="card" method="post">
+    <div class="card-content">
+      {% csrf_token %}
+      {{ form.as_p }}
+    </div>
+    <div class="card-action">
+      <input class="btn" type="submit" value="Update" />
+      <a class="btn red darken-3 right" href="{{ profile.get_absolute_url }}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}
