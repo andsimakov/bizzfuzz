@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^create/$', BuzzCreateView.as_view(), name='create'),
     url(r'^delete/(?P<pk>\d+)/$', BuzzDeleteView.as_view(), name='delete'),
     url(r'^edit/(?P<pk>\d+)/$', BuzzUpdateView.as_view(), name='edit'),
+    url(r'^exportcsv/', views.ExportProfilesCsvView.as_view(),  name='export'),
 ]

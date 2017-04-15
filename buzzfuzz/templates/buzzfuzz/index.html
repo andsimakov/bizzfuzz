@@ -10,7 +10,7 @@
         <div class="col s3 m5">Username</div>
         <div class="col s9 m7">
           <div class="col s3 center-align">Birthday</div>
-          <div class="col s3 center-align">Eliglible</div>
+          <div class="col s3 center-align">Eligible</div>
           <div class="col s3 center-align">Random</div>
           <div class="col s3 center-align">BizzFuzz</div>
         </div>
@@ -21,7 +21,7 @@
       <a class="collection-item" href="{% url 'buzzfuzz:detail' profile.id %}">
         <div class="row">
           <div class="col s3 m5">
-            {{profile.user}}
+            {{ profile.user.username }}
           </div>
           <div class="col s9 m7 badge">
             <div class="col s3 center-align">
@@ -42,4 +42,5 @@
     {% endfor %}
   </div>
   <a class="btn" href="{% url 'buzzfuzz:create' %}">Create profile</a>
+  <a class="btn blue darken-1 right" href="{% url 'buzzfuzz:export' %}">Export</a>
 {% endblock %}

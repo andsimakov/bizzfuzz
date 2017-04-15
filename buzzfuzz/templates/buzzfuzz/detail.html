@@ -10,7 +10,7 @@
       <p class="center-align">Name: {{ profile.user.username }}</p>
       <p class="center-align">Email: {{ user.email }}</p>
       <p class="center-align">Birthday: {{ profile.birthday|date:'Y-m-d' }}</p>
-      <p class="center-align">Status: <b>{% status profile %}</b></p>
+      <p class="center-align">Eligible: <b>{% status profile %}</b></p>
       <p class="center-align">Random: {{ profile.random }}</p>
       <p class="center-align">BizzFuzz: {% bizzfuzz profile %}</p>
     </div>

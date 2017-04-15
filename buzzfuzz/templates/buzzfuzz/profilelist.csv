@@ -1,0 +1,3 @@
+{% load staticfiles profiletags %}"Username","Birthday","Eligible","Random Number","BizzFuzz"
+{% for profile in profile_list %}"{{profile.user.username}}","{{ profile.birthday|date:'m/d/Y' }}","{% status profile %}","{{ profile.random }}","{% bizzfuzz profile %}"
+{% endfor %}
