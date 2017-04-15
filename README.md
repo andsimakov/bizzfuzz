@@ -1,11 +1,14 @@
 # Installation #
 
 1. Create a folder and go to it.
-1. Clone project from GitHub: https://github.com/andsimakov/bizzfuzz
+1. Clone project from GitHub:
+
+        git clone https://github.com/andsimakov/bizzfuzz
+
 3. Create a virtual environment for the app and activate it.
 4. Install requirements using pip:
 
-        code(pip install -r requirements.txt)
+        pip install -r requirements.txt
 
 5. Run migration:
 
