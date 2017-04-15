@@ -15,20 +15,17 @@ class ProfileForm(UserCreationForm):
         widget=forms.PasswordInput(attrs={'placeholder': 'Required'}))
 
     password2 = forms.CharField(
-        label='Conform Password',
+        label='Confirm Password',
         required=True,
         widget=forms.PasswordInput(attrs={'placeholder': 'Enter the same password as before, for verification'}))
-
-    email = forms.EmailField(
-        required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Required. user@example.com'}))
 
     birthday = forms.DateField(
         required=True,
         widget=forms.TextInput(attrs={'placeholder': 'Required. Enter as YYYY-MM-DD'}))
 
     def save(self, commit=True):
-        user = super(UserCreationForm, self).save(commit=commit)
+        user = super(ProfileForm, self).save(commit=commit)
+
         user_profile = Profile.objects.create(
             user=user,
             birthday=self.cleaned_data['birthday'],

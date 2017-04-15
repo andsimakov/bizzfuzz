@@ -15,12 +15,12 @@ class BuzzRedirectView(RedirectView):
 
 
 class BuzzDetailView(DetailView):
-    template_name = "buzzfuzz/detail.html"
+    template_name = 'buzzfuzz/detail.html'
     model = Profile
 
 
 class BuzzCreateView(CreateView):
-    template_name = "buzzfuzz/create.html"
+    template_name = 'buzzfuzz/create.html'
     form_class = ProfileForm
 
     def form_valid(self, form):
@@ -34,9 +34,9 @@ class BuzzDeleteView(DeleteView):
 
 
 class BuzzUpdateView(UpdateView):
-    template_name = "buzzfuzz/edit.html"
+    template_name = 'buzzfuzz/edit.html'
     model = Profile
-    form_class = ProfileForm
+    fields = ['birthday']
 
 
 class ExportProfilesView(ListView):
@@ -57,5 +57,3 @@ class ExportProfilesCsvView(ExportProfilesView):
     """
     template_name = 'buzzfuzz/profilelist.csv'
     content_type = 'text/csv'
-
-
