@@ -1,10 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, RedirectView, View
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, RedirectView
 
-from .models import Profile, User
+from .models import Profile
 from .forms import ProfileForm
-from django.http import HttpResponse
-import csv
 
 
 class BuzzListView(ListView):
@@ -32,7 +30,7 @@ class BuzzCreateView(CreateView):
 
 class BuzzDeleteView(DeleteView):
     model = Profile
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('buzzfuzz:index')
 
 
 class BuzzUpdateView(UpdateView):

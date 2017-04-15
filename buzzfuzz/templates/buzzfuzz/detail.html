@@ -3,12 +3,12 @@
 {% block title %}Profile details{% endblock %}
 
 {% block content %}
-  <h3 class="title">Profile of {{profile.user}}</h3>
+  <h3 class="title">Profile of {{ profile.user.username }}</h3>
   <a class="btn-flat" href="{% url 'buzzfuzz:index' %}">⇠ Back to list</a>
   <div class="card">
     <div class="card-content">
       <p class="center-align">Name: {{ profile.user.username }}</p>
-      <p class="center-align">Email: {{ user.email }}</p>
+      <p class="center-align">Email: {{ profile.user.email }}</p>
       <p class="center-align">Birthday: {{ profile.birthday|date:'Y-m-d' }}</p>
       <p class="center-align">Eligible: <b>{% status profile %}</b></p>
       <p class="center-align">Random: {{ profile.random }}</p>

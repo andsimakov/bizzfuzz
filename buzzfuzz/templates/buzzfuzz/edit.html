@@ -2,7 +2,7 @@
 {% block title %}Edit profile{% endblock %}
 
 {% block content %}
-  <h3 class="title">Update {{profile.user}} profile</h3>
+  <h3 class="title">Update profile of {{profile.user.username}}</h3>
   <form class="card" method="post">
     <div class="card-content">
       {% csrf_token %}
