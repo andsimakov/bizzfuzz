@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, RedirectView
 
-from .models import Profile
+from .models import Profile, User
 from .forms import ProfileForm
 
 

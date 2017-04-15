@@ -1,12 +1,45 @@
 {% extends 'buzzfuzz/base.html' %}
+{% load staticfiles profiletags %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
   <h3 class="title">All profiles</h3>
   <div class="collection">
-  {% for profile in profile_list %}
-    <a class="collection-item" href="{% url 'buzzfuzz:detail' profile.id %}">{{profile.user}}</a>
-  {% endfor %}
+    <div class="row">
+      <div class="collection-item">
+        <div class="col s3 m5">Username</div>
+        <div class="col s9 m7">
+          <div class="col s3 center-align">Birthday</div>
+          <div class="col s3 center-align">Eliglible</div>
+          <div class="col s3 center-align">Random</div>
+          <div class="col s3 center-align">BizzFuzz</div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    {% for profile in profile_list %}
+      <a class="collection-item" href="{% url 'buzzfuzz:detail' profile.id %}">
+        <div class="row">
+          <div class="col s3 m5">
+            {{profile.user}}
+          </div>
+          <div class="col s9 m7 badge">
+            <div class="col s3 center-align">
+              <span>{{ profile.birthday|date:'m/d/Y' }}</span>
+            </div>
+            <div class="col s3 center-align">
+              <span>{% status profile %}</span>
+            </div>
+            <div class="col s3 center-align">
+              <span>{{ profile.random }}</span>
+            </div>
+            <div class="col s3 center-align">
+              <span>{% bizzfuzz profile %}</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
   </div>
   <a class="btn" href="{% url 'buzzfuzz:create' %}">Create profile</a>
 {% endblock %}
