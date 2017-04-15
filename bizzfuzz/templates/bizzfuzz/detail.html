@@ -1,10 +1,10 @@
-{% extends 'buzzfuzz/base.html' %}
+{% extends 'bizzfuzz/base.html' %}
 {% load staticfiles profiletags %}
 {% block title %}Profile details{% endblock %}
 
 {% block content %}
   <h3 class="title">Profile of {{ profile.user.username }}</h3>
-  <a class="btn-flat" href="{% url 'buzzfuzz:index' %}">⇠ Back to list</a>
+  <a class="btn-flat" href="{% url 'bizzfuzz:index' %}">⇠ Back to list</a>
   <div class="card">
     <div class="card-content">
       <p class="center-align">Name: {{ profile.user.username }}</p>
@@ -14,10 +14,10 @@
       <p class="center-align">BizzFuzz: {% bizzfuzz profile %}</p>
     </div>
     <div class="card-action">
-      <form class="right" method="POST" action="{% url 'buzzfuzz:delete' profile.id %}">{% csrf_token %}
+      <form class="right" method="POST" action="{% url 'bizzfuzz:delete' profile.id %}">{% csrf_token %}
         <input class="btn red" type="submit" value="Delete">
       </form>
-      <a class="btn" href="{% url 'buzzfuzz:edit' profile.id %}">Edit profile</a>
+      <a class="btn" href="{% url 'bizzfuzz:edit' profile.id %}">Edit profile</a>
     </div>
   </div>
 {% endblock %}

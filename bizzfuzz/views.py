@@ -6,7 +6,7 @@ from .forms import ProfileForm
 
 
 class BuzzListView(ListView):
-    template_name = 'buzzfuzz/index.html'
+    template_name = 'bizzfuzz/index.html'
     model = Profile
 
 
@@ -15,12 +15,12 @@ class BuzzRedirectView(RedirectView):
 
 
 class BuzzDetailView(DetailView):
-    template_name = 'buzzfuzz/detail.html'
+    template_name = 'bizzfuzz/detail.html'
     model = Profile
 
 
 class BuzzCreateView(CreateView):
-    template_name = 'buzzfuzz/create.html'
+    template_name = 'bizzfuzz/create.html'
     form_class = ProfileForm
 
     def form_valid(self, form):
@@ -30,11 +30,11 @@ class BuzzCreateView(CreateView):
 
 class BuzzDeleteView(DeleteView):
     model = Profile
-    success_url = reverse_lazy('buzzfuzz:index')
+    success_url = reverse_lazy('bizzfuzz:index')
 
 
 class BuzzUpdateView(UpdateView):
-    template_name = 'buzzfuzz/edit.html'
+    template_name = 'bizzfuzz/edit.html'
     model = Profile
     fields = ['birthday']
 
@@ -43,7 +43,7 @@ class ExportProfilesView(ListView):
     """
     The standard view for HTML return
     """
-    template_name = 'buzzfuzz/index.html'
+    template_name = 'bizzfuzz/index.html'
     model = Profile
     context_object_name = 'profile_list'
 
@@ -55,5 +55,5 @@ class ExportProfilesCsvView(ExportProfilesView):
     """
     Subclass of previous view, to export a CSV file
     """
-    template_name = 'buzzfuzz/profilelist.csv'
+    template_name = 'bizzfuzz/profilelist.csv'
     content_type = 'text/csv'

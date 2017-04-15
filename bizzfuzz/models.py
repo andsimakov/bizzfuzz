@@ -9,7 +9,7 @@ class Profile(models.Model):
     random = models.PositiveIntegerField()
 
     def get_absolute_url(self):
-        return reverse('buzzfuzz:detail', kwargs={'pk': self.id})
+        return reverse('bizzfuzz:detail', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.user.username

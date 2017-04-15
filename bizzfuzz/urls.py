@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 from .views import BuzzListView, BuzzDetailView, BuzzCreateView, BuzzDeleteView, BuzzUpdateView
 
-app_name = 'buzzfuzz'
+app_name = 'bizzfuzz'
 
 urlpatterns = [
     url(r'^$', BuzzListView.as_view(), name='index'),

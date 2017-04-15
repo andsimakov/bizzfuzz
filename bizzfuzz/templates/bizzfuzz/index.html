@@ -1,4 +1,4 @@
-{% extends 'buzzfuzz/base.html' %}
+{% extends 'bizzfuzz/base.html' %}
 {% load staticfiles profiletags %}
 {% block title %}Home{% endblock %}
 
@@ -18,7 +18,7 @@
     </div>
     <hr />
     {% for profile in profile_list %}
-      <a class="collection-item" href="{% url 'buzzfuzz:detail' profile.id %}">
+      <a class="collection-item" href="{% url 'bizzfuzz:detail' profile.id %}">
         <div class="row">
           <div class="col s3 m5">
             {{ profile.user.username }}
@@ -41,6 +41,6 @@
       </a>
     {% endfor %}
   </div>
-  <a class="btn" href="{% url 'buzzfuzz:create' %}">Create profile</a>
-  <a class="btn blue darken-1 right" href="{% url 'buzzfuzz:export' %}">Export</a>
+  <a class="btn" href="{% url 'bizzfuzz:create' %}">Create profile</a>
+  <a class="btn blue darken-1 right" href="{% url 'bizzfuzz:export' %}">Export</a>
 {% endblock %}
