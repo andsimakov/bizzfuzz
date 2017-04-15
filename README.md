@@ -1,18 +1,38 @@
 # Installation #
 
-1. Create a folder and go to it.
-1. Clone project from GitHub:
+1. Create a folder and go to it:
+
+        mkdir project
+        cd project
+
+2. Clone project from GitHub:
 
         git clone https://github.com/andsimakov/bizzfuzz
 
-3. Create a virtual environment for the app and activate it.
+3. Create a virtual environment in folder 'venv' for the app and activate it:
+
+        python3 -m venv venv
+        . venv/bin/activate
+
 4. Install requirements using pip:
 
-        pip install -r requirements.txt
+        pip install -r bizzfuzz/requirements.txt
 
-5. Run migration:
+5. Run a migration:
 
-        ./manage.py migrate
+        cd bizzfuzz
+        ./manage.py makemigrations bizzfuzz
+        ./manage.py migrate --fake-initial
+
+6. Run the app:
+
+        ./manage.py runserver
+
+7. Open your browser and access the app:
+
+        localhost
+
+The empty List View should appear. Now the app is ready for work.
 
 - - - -
 
